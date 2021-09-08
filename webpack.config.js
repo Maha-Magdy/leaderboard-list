@@ -8,8 +8,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+  devtool: "inline-source-map",
   devServer: {
-    static: './dist',
+    static: "./dist",
   },
   plugins: [
     new HtmlWebpackPlugin({

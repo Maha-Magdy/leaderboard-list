@@ -26,9 +26,11 @@
                 <h3 class="m-0 mb-25">Add your score</h3>
             </div>
             <div>
-                <input type="text" class="d-block mb-15" placeholder="Your Name">
-                <input type="text" class="d-block mb-15" placeholder="Your Score">
-                <button type="submit">Submit</button>
+                <form>
+                    <input type="text" class="d-block mb-15" placeholder="Your Name" name="user" id="name" required>
+                    <input type="text" class="d-block mb-15" placeholder="Your Score" name="score" id="score" required>
+                    <button type="submit" id="submit-new-score">Submit</button>
+                </form>
             </div>
         </div>
     </main>

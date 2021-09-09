@@ -6,7 +6,7 @@ export default class NewRecord {
 
   async addNewRecord() {
     const response = await fetch(
-      "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Zl4d7IVkemOTTVg2fUdz/scores/",
+      "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7KZzvMgheMijgkb7Br8c/scores/",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -18,7 +18,7 @@ export default class NewRecord {
       const result = await response.json();
       return result;
     } catch (error) {
-      alert("There is an error:", error);
+      console.log("There is an error:", error);
     }
   }
 }

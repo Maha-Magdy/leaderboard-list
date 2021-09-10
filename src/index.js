@@ -18,7 +18,7 @@ const getRecentScores = () => {
       recentScoresList.appendChild(li);
     }
   });
-}
+};
 
 window.addEventListener('load', getRecentScores());
 

@@ -5,7 +5,7 @@ import RecentScores from './recent-scores.js';
 
 const recentScoresList = document.getElementById('recent-scores-list');
 
-function getRecentScores() {
+const getRecentScores = () => {
   recentScoresList.innerHTML = '';
   RecentScores.getRecentScores().then((leaderBoardList) => {
     for (let i = 0; i < leaderBoardList.length; i++) {

@@ -1,12 +1,17 @@
 /* eslint-disable no-plusplus */
+/* eslint-disable no-unused-expressions */
 import './css/style.css';
 import NewRecord from './new-record.js';
 import RecentScores from './recent-scores.js';
 
 const recentScoresList = document.getElementById('recent-scores-list');
+const loadingSpinner = document.getElementById('loading-spinner');
 
 const getRecentScores = () => {
   recentScoresList.innerHTML = '';
+  loadingSpinner.style.display = 'block';
+  recentScoresList.style.display = 'none';
+
   RecentScores.getRecentScores().then((leaderBoardList) => {
     for (let i = 0; i < leaderBoardList.length; i++) {
       const li = document.createElement('li');
@@ -17,6 +22,9 @@ const getRecentScores = () => {
       );
       recentScoresList.appendChild(li);
     }
+
+    loadingSpinner.style.display = 'none';
+    recentScoresList.style.display = 'block';
   });
 };
 
@@ -32,12 +40,16 @@ const score = document.getElementById('score');
 const submitNewScore = document.getElementById('submit-new-score');
 
 submitNewScore.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  if (name.value !== '' && score.value !== '') {
-    const newRecord = new NewRecord(name.value, score.value);
-    newRecord.addNewRecord();
-    name.value = null;
+  const regex = /^\d+$/;
+  if (regex.test(score.value)) {
+    if (name.value !== '' && score.value !== '') {
+      const newRecord = new NewRecord(name.value, score.value);
+      newRecord.addNewRecord();
+      name.value = null;
+      score.value = null;
+    }
+  } else {
+    e.preventDefault;
     score.value = null;
   }
 });

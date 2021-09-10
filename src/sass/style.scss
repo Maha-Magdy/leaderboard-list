@@ -1,6 +1,33 @@
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: cursive, sans-serif;
   padding: 50px;
+}
+
+input {
+  padding: 10px;
+  width: calc(100% - 25px);
+}
+
+button {
+  border: unset;
+  padding: 10px 50px;
+  background: #24c7bf;
+  color: white;
+  font-size: medium;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+form {
+  width: 75%;
+  position: relative;
+
+  button {
+    position: absolute;
+    right: 0;
+  }
 }
 
 .m-0 {
@@ -23,6 +50,11 @@ body {
   padding: 0 50px;
 }
 
+.note {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
 main {
   display: flex;
 }
@@ -43,10 +75,92 @@ main {
   border-radius: 5px;
 
   li {
-    padding: 5px 15px;
+    padding: 10px 15px;
   }
 
   li:nth-child(even) {
     background-color: #f2f2f2;
+  }
+}
+
+// Loading spinner
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #24c7bf;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    display: block;
+
+    > div {
+      width: 100% !important;
+    }
+  }
+
+  .p-lr {
+    padding: 0;
   }
 }

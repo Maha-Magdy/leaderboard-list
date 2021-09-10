@@ -39,12 +39,16 @@ const score = document.getElementById("score");
 const submitNewScore = document.getElementById("submit-new-score");
 
 submitNewScore.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  if (name.value !== "" && score.value !== "") {
-    const newRecord = new NewRecord(name.value, score.value);
-    newRecord.addNewRecord();
-    name.value = null;
+  const regex = /^\d+$/;
+  if (regex.test(score.value)) {
+    if (name.value !== "" && score.value !== "") {
+      const newRecord = new NewRecord(name.value, score.value);
+      newRecord.addNewRecord();
+      name.value = null;
+      score.value = null;
+    }
+  } else {
+    e.preventDefault;
     score.value = null;
   }
 });

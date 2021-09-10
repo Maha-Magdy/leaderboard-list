@@ -1,8 +1,8 @@
 # leaderboard-list
 
-A "Leaderboard List" is a tool that helps to fetch the leaderboard list, which contains names and scores. In addition, a new name and score can be added to this list. This list was built with ES6 and Webpack.
+A "Leaderboard List" is a tool that helps to fetch the leaderboard list, which contains names and scores. In addition, a new name and score can be added to this list. This list was built with ES6, Webpack, and fetching the data from REST API.
 
-<!-- ![screenshot](app_screenshot.png) -->
+![screenshot](app_screenshot.png)
 ## Built With
 
 - ES6
@@ -10,11 +10,10 @@ A "Leaderboard List" is a tool that helps to fetch the leaderboard list, which c
 - html-webpack-plugin
 - style-loader, css-loader
 - webpack-dev-server
-
-<!-- 
+- API service
 ## Live Demo
 
-[Live Demo Link]( https://maha-magdy.github.io/To-Do-List/ ) -->
+[Live Demo Link]( https://maha-magdy.github.io/leaderboard-list/ )
 
 ## Getting Started
 
@@ -69,6 +68,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [webpack](https://webpack.js.org/)
+- [Leaderboard API service](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3)
 
 ## 📝 License
 
